@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Css links -->
+    <link rel="stylesheet" href="template.css/summary_guest.css">
+    <link rel="stylesheet" href="./template.css/header_menu.css">
+    <link rel="icon" type="image/png" href="accessories/img/ficon.png"/>
+    <!-- JavaScript links -->
+    <script src="template.js/script.js"></script>
+    <script src="template.js/mini_backend.js"></script>
+    <script src="template.js/summary_user.js"></script>
+    <script src="https://kit.fontawesome.com/b7a5700e28.js" crossorigin="anonymous"></script>
+    <title>Summary</title>
+    <meta http-equiv="expires" content="5">
+</head>
+<body onload="includeHTML(), init()">
+    <div w3-include-html="side.html"></div>
+    <div class="content">
+        <div class="frame40">
+            <div class="summary"> Summary</div>
+            <div class="vector5"></div>
+            <div class="nutshell">Everything in a nutshell!</div>
+            <div class="mobilvector">     </div>
+        </div>
+        <div class="content2">
+            <div class="frame66">
+                <div class="frame64">
+                    <a href="board.html" class="buttonV1">
+                        <div class="frame61">
+                            <div class="number" id="taskBoard">0</div>
+                            <div class="tasks"> Task in Board </div>
+                        </div>
+                    </a>
+                    <a href="board.html" class="buttonV1">
+                        <div class="frame61">
+                            <div class="number" id="taskProgress">0</div>
+                            <div class="tasks"> Task in Progress </div>
+                        </div>
+                    </a>
+                    <a href="board.html" class="buttonV1">
+                        <div class="frame61">
+                            <div class="number" id="awaitingFeedback">0</div>
+                            <div class="tasks"> Awaiting Feedback </div>
+                        </div>
+                    </a>
+                </div>
+                <a href="board.html" class="urgency">
+                    <div class="frame67">
+                        <img class="frame591" src="accessories/img/Frame 59.png">
+                        <div class="frame63">
+                            <div class="urgentNumber" id="urgent">0</div>
+                            <div class="urgent"> Urgent </div>
+                        </div>
+                    </div>
+                    <div class="vector51"></div>
+                    <div class="frame68">
+                        <div class="date" id="date">Datum</div>
+                        <div class="deadline">Upcoming Deadline</div>
+                    </div>
+                </a>
+                <div class="frame65">
+                    <a href="board.html" class="pencilButton">
+                        <img class="frame592" src="accessories/img/pen.png">
+                        <div class="frame60">
+                            <div class="todo" id="todo">0</div>
+                            <div class="backlog"> To-do </div>
+                        </div>
+                    </a>
+                    <a href="board.html" class="checkbutton">
+
+                        <img class="frame593" src="accessories/img/ok.png">
+                        <div class="frame60">
+                            <div class="donenumber" id="done">0</div>
+                            <div class="done"> Done </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="frame69">
+                <div class="morning" id="morning"> </div>
+                <div class="user" id="user"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

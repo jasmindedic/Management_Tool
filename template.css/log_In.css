@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Schoolbell&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter';
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #F5F5F5;
+  font-size: 21px;
+  padding: 0 25px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 625px;
+  min-height: auto;
+  background: #fff;
+  box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+  border-radius: 30px;
+  padding: 35px 115px;
+  opacity: 1;
+  animation: fade-in ease-in 1000ms;
+}
+
+.dis-none {
+  display: none;
+}
+
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    70% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 61px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+hr {
+  width: 150px;
+  height: 3px;
+  background: #29ABE2;
+  border: none;
+  margin-bottom: 25px;
+}
+
+.input-line {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 35px;
+}
+
+.icon {
+  position: absolute;
+  font-size: 21px;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: #A8A8A8;
+}
+
+#pass-eye {
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  height: 50px;
+  outline: none;
+  padding: 15px 20px;
+  border: 1px solid #D1D1D1;
+  border-radius: 10px;
+  font-size: 21px;
+  background: #fff;
+}
+
+
+#message-box {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  line-height: 30px;
+  background: #ffe1e1;
+  color: rgb(200, 10, 10);
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.remember-line {
+  height: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 25px;
+  margin-top: 15px;
+}
+
+
+#form-check-remember {
+  height: 15px;
+  width: 15px;
+  margin-right: 8px;
+}
+
+.remember-line a {
+  text-decoration: none;
+  color: #29ABE2;
+  padding-left: 10px;
+}
+
+.remember-line a:hover {
+  text-decoration: underline;
+}
+
+
+.btn-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  min-height: 50px;
+}
+
+#log-in {
+  background: #2A3647;
+  color: #fff;
+  border: none;
+  width: 145px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 21px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#log-in:hover {
+background-color: #29ABE2;
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+#guest-log-in {
+  background: transparent;
+  border: 1px solid #2A3647;
+  color: #2A3647;
+  text-decoration: none;
+  padding: 0px 16px;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 50px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#guest-log-in:hover {
+  color: #29ABE2;
+  border: 1px solid #29ABE2;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.signup-line {
+  position: absolute;
+  top: 35px;
+  right: 80px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  animation: fade-in ease-in 1000ms;
+}
+
+.signup-line a:hover {
+  background-color: #29ABE2;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  }
+
+.signup-line a {
+  text-decoration: none;
+  background: #2A3647;
+  color: #fff;
+  border: none;
+  height: 50px;
+  padding: 16px;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+#logo {
+  position: absolute;
+  top: 35px;
+  left: 80px;
+  width: 100px;
+  animation: animate-logo ease-in 1000ms;
+}
+
+@keyframes animate-logo {
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: scale(3);
+  }
+  55% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: scale(3);
+  }
+  100% {
+    top: 35px;
+    left: 80px;
+    transform: scale(1);
+  }
+}
+
+/****** MEDIA **************/
+
+@media (max-width: 1080px) {
+  .container {
+      width: 520px;
+      padding: 35px 70px;
+  }
+
+  #logo {
+      top: 25px;
+      left: 50px;
+      width: 80px;
+  }
+}
+
+@media (max-width: 840px) {
+  #logo {
+      top: 25px;
+      left: 50px;
+      width: 60px;
+  }
+}
+
+@media (max-width: 620px) {
+  .container {
+      width: 100%;
+      padding: 35px 40px;
+  }
+
+  .arrow-back {
+      top: 30px;
+      left: 30px;
+  }
+  
+  .arrow-back a {
+      font-size: 35px;
+      color: #29ABE2;
+  }
+
+  h1 {
+      font-size: 47px;
+  }
+
+  .signup-line {
+    top: unset;
+    right: unset;
+    bottom: 21px;
+}
+
+  #logo {
+    top: 15px;
+    left: 25px;
+    width: 45px;
+}
+
+  .btn-line {
+    margin-top: 30px;
+    gap: 20px;
+  }
+
+  #log-in,
+  #guest-log-in {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 470px) {
+  .remember-line {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 15px 0;
+  }
+
+  .btn-line {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 300px) {
+
+  body{
+    font-size: 10px;
+  }
+  .remember-line {
+    font-size: 10px;
+  }
+
+  #guest-log-in{
+    font-size: 13px;
+  }
+
+  #log-in{
+    font-size: 13px;
+  }
+
+  input{
+    font-size: 10px;
+  }
+
+  .signup-line {
+    bottom: 16px;
+}
+
+}
+
+
+@media (max-height: 740px) {
+  .container {
+    margin-top: -51px;
+  }
+}
+
+@media (max-height: 540px) {
+
+  body{
+    font-size: 12px;
+  }
+}
+
+@media (max-height: 420px) {
+  h1{
+    font-size: 45px;
+    margin-bottom: -13px;
+  }
+  .container {
+    width: 447px;
+    padding: 26px 30px;
+    height: 80vh;
+    margin-top: 23px;
+}
+
+body{
+  font-size: 9px;
+}
+
+.input-line {
+  position: relative;
+  width: 79%;
+  height: 39px;
+  margin-bottom: 14px;
+}
+
+#log-in{
+  font-size: 16px;
+  height: 32px;
+}
+
+#guest-log-in{
+font-size: 16px;
+line-height: 32px;
+}
+
+.remember-line{
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+hr{
+  height: 0px;
+}
+} 
+
+
+@media (max-height: 300px) {
+.container {
+  width: 447px;
+  padding: 3px 30px;
+  margin-top: 0px;
+  height: 98vh;
+}
+
+.signup-line {
+  top: 13px;
+  right: 54px;
+}
+}
+
+
+
+
+

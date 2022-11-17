@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./template.css/add_task.css">
+  <link rel="icon" type="image/png" href="accessories/img/ficon.png" />
+  <link rel="stylesheet" href="./template.css/header_menu.css">
+  <script src="https://kit.fontawesome.com/b7a5700e28.js" crossorigin="anonymous"></script>
+  <script src="./template.js/script.js"></script>
+  <script src="./template.js/add_task.js"></script>
+  <script src="./template.js/task.js"></script>
+  <script src="template.js/board_html.js"></script>
+  <script src="template.js/mini_backend.js"></script>
+  <!-- Website title -->
+  <title>Add Task</title>
+</head>
+<body onload="includeHTML(), init()">
+  <div w3-include-html="side.html"></div>
+  <div id="container">
+    <div id="message-box" class="d-none">
+      <span id="message">Task added to board!</span>
+      <img src="./accessories/img/board_logo.svg" alt="">
+    </div>
+    <div w3-include-html="task.html"></div>
+  </div>
+</body>
+</html>

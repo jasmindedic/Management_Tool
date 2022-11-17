@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>contacts</title>
+    <link rel="stylesheet" href="template.css/contacts.css" />
+    <link rel="stylesheet" href="template.css/header_menu.css" />
+    <link rel="stylesheet" href="template.mobile.css/contacts_mobile.css" />
+    <link rel="stylesheet" href="template.mobile.css/header_menu_mobile.css" />
+    <link rel="stylesheet" href="template.css/add_task.css">
+    <script src="template.js/script.js"></script>
+    <script src="template.js/contacts.js"></script>
+    <script src="template.js/mini_backend.js"></script>
+    <script src="./template.js/header_menu.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7006ded5e1.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body id="body" onload="includeHTML(), init(), loadAllContacts()">
+    <div w3-include-html="side.html"></div>
+    <!----------------------------- CONTACTS-LIST ----------------------------->
+    <div id="container">
+      <div id="contacts-List" class="contacts-list">
+        <div class="contact-menu"></div>
+        <nav class="scroll-bar"></nav>
+      </div>
+      <!----------------------------- MAIN-CONTENT ----------------------------->
+      <div id="main-content">
+        <div class="heading">
+          <h1>Contacts</h1>
+          <img src="accessories/img/border-straight.svg" />
+          <span>Better with a team</span>
+        </div>
+        <div id="main-contact-content"></div>
+        <div id="contacts-popup" class="add-button" onclick="openPopup()">
+          <div class="add-btn-text">New contact</div>
+          <img class="add-btn-icon" src="accessories/img/add-icon.svg" />
+        </div>
+      </div>
+      <!----------------------------- POP-UP ----------------------------->
+      <div id="contact-popup" class="contact-popup d-none">
+        <div class="left-side">
+          <img id="popup-logo" src="accessories/img/addContact-Logo.svg" />
+          <span class="add-heading">Add contact</span>
+          <span class="add-span">Tasks are better with a team!</span>
+          <img src="accessories/img/little-line.svg" />
+        </div>
+        <div class="right-side">
+          <img
+            class="contact-img"
+            src="accessories/img/profile-logo-addcontact.svg"
+          />
+          <img
+            onclick="closePopup()"
+            id="cancel-x"
+            class="cancel-x"
+            src="accessories/img/cancel-logo.svg"
+            alt=""
+          />
+          <form onsubmit="checkContact(); return false">
+            <div class="input-line">
+              <span class="icon icon1"><i class="fa-solid fa-user"></i></span>
+              <input
+                class="input-name"
+                id="name"
+                type="text"
+                placeholder="Name"
+                required
+              />
+            </div>
+            <div class="input-line">
+              <span class="icon icon2"
+                ><i class="fa-solid fa-envelope"></i
+              ></span>
+              <input
+                class="input-name"
+                id="email"
+                type="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div class="input-line">
+              <span class="icon icon3"><i class="fa-solid fa-phone"></i></span>
+              <input
+                class="input-name"
+                id="phone"
+                type="tel"
+                placeholder="Phone"
+                required
+              />
+            </div>
+            <div class="buttons">
+              <div class="cancel-button popup-button" onclick="closePopup()">
+                <div id="cancel-btn" class="cancel-button-text">Cancel</div>
+                <i class="icon4 fa-solid fa-xmark"></i>
+              </div>
+              <div class="create-button popup-button" onclick="createContact()">
+                <div id="create-btn" class="create-button-text">
+                  Create contact
+                </div>
+                <i class="icon5 fa-solid fa-check"></i>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+       <div class="popup-container" id="board-popup">
+            <h1>Add Task</h1>
+            <form id="task-form" onsubmit="checkTask(); return false">
+                <div class="form-content">
+                    <div class="form-box" id="box-left">
+                    <p class="labels">Title</p>
+                    <input type="text" name="title" id="form-title" placeholder="Enter a title" required>
+                    <p class="labels">Description</p>
+                    <textarea name="descr" id="form-descr" cols="30" rows="10" placeholder="Enter a Description"
+                        required></textarea>
+                    <p class="labels">Category</p>
+                    <select name="category" id="form-category" required>
+                        <option value="design">Design</option>
+                        <option value="office">Backoffice</option>
+                        <option value="sales">Sales</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="media">Media</option>
+                    </select>
+                    <p class="labels">Assigned to</p>
+                    <div id="select-box" onclick="showCheckboxes()">
+                        <select id="form-assign">
+                            <option>Select an option</option>
+                        </select>
+                        <div class="overSelect"></div>
+                        <div id="checkboxes">
+                            <div class="assign-contact">
+                                <span>You</span>
+                                <input type="checkbox">
+                            </div>
+                            <div class="assign-contact">
+                                <span>Bennedikt Ziegler</span>
+                                <input type="checkbox">
+                            </div>
+                            <div class="assign-contact">
+                                <span>Eva Fischer</span>
+                                <input type="checkbox">
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-box" id="box-right">
+                    <p class="labels">Due date</p>
+                    <input type="date" name="date" id="input-date">
+                    <p class="labels">Prio</p>
+                    <div class="prio-line">
+                        <button type="button" id="btn-1" class="prios" onclick="activate(1, 'urgent')">Urgent <span
+                                id="icon-prio-1"><i class="fa-solid fa-chevron-up"></i></span></button>
+                        <button type="button" id="btn-2" class="prios" onclick="activate(2, 'medium')">Medium <span
+                                id="icon-prio-2"><i class="fa-solid fa-equals  active-icon"></i></span></button>
+                        <button type="button" id="btn-3" class="prios" onclick="activate(3, 'low')">Low <span
+                                id="icon-prio-3"><i class="fa-solid fa-chevron-down"></i></span></button>
+                    </div>
+                    <p class="labels">Subtasks</p>
+                    <div class="subtask-line">
+                        <button type="button" id="add-subtask"><i class="fa-solid fa-plus"
+                                onclick="addSubtask()"></i></button>
+                        <input type="text" name="subtask" id="form-subtask" placeholder="Add new subtask">
+                    </div>
+                    <ul id="subtask-list">
+                        <li>
+                            <input type="checkbox" name="check-subtask" id="form-check-subtask">
+                            <span>Subtask 1</span>
+                        </li>
+                    </ul>
+                    </div>
+                    <span id="hrz-line"></span>
+                </div>
+                <div class="btn-line" id="btn-line">
+                    <button id="clear-btn" onclick="closePopup()"><span class="icon_label">Clear</span><span class="icon"><i
+                                class="fa-solid fa-xmark"></i></span></button>
+                    <button id="create-btn" type="submit"><span class="icon_label">Create Task </span><span
+                            class="icon"><i class="fa-solid fa-check"></i></span></button>
+                </div>
+            </form>
+
+
+        </div>
+  </body>
+</html>

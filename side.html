@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Side Menu</title>
+  <!-- Css links -->
+  <link rel="stylesheet" type="text/css" href="template.css/header_menu.css" />
+  <link rel="icon" type="image/png" href="accessories/img/ficon.png" />
+  <!-- JavaScript link -->
+  <script src="./template.js/mini_backend.js"></script>
+</head>
+<body>
+  <!-- header-menu -->
+  <div class="header">
+    <img id="header_logo" src="accessories/img/Join_Logo2.svg" alt="" />
+    <h2 class="kanban-heading">Kanban Project Management Tool</h2>
+    <div class="help_profile">
+      <a href="help.html"><img class="help_icon" src="accessories/img/help_logo.svg" /></a>
+      <a href="#"><img class="profile" id="toggle" 
+          src="./accessories/img/profile_guest.png" /></a>
+    </div>
+    <nav id="toggle-menu" class="d-none">
+      <a href="help.html" id="nav-help">Help</a>
+      <a href="legal_notice.html" id="nav-legal">Legal Notice</a>
+      <a href="#" id="nav-log" onclick="logout()">Log In</a>
+  </div>
+  </div>
+  <div class="left-menu">
+    <div>
+      <a href="summary_user.html">
+        <img id="menu_logo" src="accessories/img/Join_Logo.svg" alt="" />
+      </a>
+    </div>
+    <div id="menu-list">
+      <div class="menu-entry">
+        <a href="summary_user.html" class="menu_name" id="summarySide">
+          <img src="accessories/img/summary_logo.svg" alt="" />
+          <span>Summary</span>
+        </a>
+      </div>
+      <div class="menu-entry">
+        <a href="board.html" class="menu_name" id="boardSide" >
+          <img src="accessories/img/board_logo.svg" alt="" />
+          <span>Board</span>
+        </a>
+      </div>
+      <div class="menu-entry">
+        <a href="add_task.html" class="menu_name" id="taskSide" >
+          <img src="accessories/img/add_task_logo.svg" alt="" />
+          <span>Add Task</span>
+        </a>
+      </div>
+      <div class="menu-entry">
+        <a href="contacts.html" class="menu_name" id="contactSide" >
+          <img src="accessories/img/contacts_logo.svg" alt="" />
+          <span>Contacts</span>
+        </a>
+      </div>
+    </div>
+    <a href="legal_notice.html" class="info-container" id="legalSide">
+      <img class="info-icon" src="accessories/img/impressum_icon.svg" alt="" />
+      <span class="info-name">Legal Notice</span>
+    </a>
+  </div>
+</body>
+</html>

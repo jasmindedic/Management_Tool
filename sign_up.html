@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Css links -->
+    <link rel="stylesheet" href="./template.css/sign_up.css">
+    <link rel="icon" type="image/png" href="accessories/img/ficon.png" />
+    <!-- JavaScript links -->
+    <script src="https://kit.fontawesome.com/b7a5700e28.js" crossorigin="anonymous"></script>
+    <script src="template.js/mini_backend.js"></script>
+    <title>Sign up</title>
+  </head>
+  <body>
+    <header>
+      <img src="./accessories/img/Join_Logo2.svg" id="logo">
+    </header>
+      <div class="container">
+        <div class="arrow-back">
+            <a href="Log_In.html"><i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+        <h1>Sign in</h1>
+        <hr>
+        <form action="./sign_up_success.html"  onsubmit="return check()">
+          <div class="input-line">
+            <input type="text" name="name" id="input-name" placeholder="Name" required>
+            <span class="icon"><i class="fa-regular fa-user"></i></span>
+          </div>
+          <div class="input-line">
+            <input type="email" name="email" id="input-email" placeholder="Email" required>
+            <span class="icon"><i class="fa-regular fa-envelope"></i></span> 
+          </div>
+          <div class="input-line">
+            <input type="password" name="password" id="input-password" placeholder="Password" required>
+            <span class="icon" id="pass-eye"><i class="fa-solid fa-eye-slash"></i></span>
+          </div>
+          <div id="message-box" class=""></div>
+          <div class="btn-line">
+            <input id="sign-up" type="submit" value="Sign In">
+          </div>
+        </form>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Css links -->
+    <link rel="stylesheet" href="./template.css/log_In.css">
+    <link rel="icon" type="image/png" href="accessories/img/ficon.png" />
+    <!-- JavaScript links -->
+    <script src="https://kit.fontawesome.com/b7a5700e28.js" crossorigin="anonymous"></script>
+    <script src="./template.js/log_in.js"></script>
+    <script src="template.js/mini_backend.js"></script>
+    <title>Log_In</title>
+  </head>
+  <body onload="init()">
+      <img src="./accessories/img/Join_Logo2.svg" id="logo">
+      <div class="signup-line">
+        <p id="hint-sign-up">Not a Join user?</p>
+        <a href="sign_up.html">Sign up</a>
+      </div>
+      <div class="container">
+        <h1>Log in</h1>
+        <hr>
+        <form id="form" onsubmit="return checkLogin()">
+          <div class="input-line">
+            <span class="icon"><i class="fa-regular fa-envelope"></i></span>
+            <input type="email" name="email" id="input-email" placeholder="Email" required onfocus="hideOnFocus()">
+          </div>
+          <div class="input-line">
+            <span class="icon" id="pass-eye" onclick="togglePassword()"><i class="fa-solid fa-eye-slash"></i></span>
+            <input type="password" name="password" id="input-password" placeholder="Password" required onfocus="hideOnFocus()">
+          </div>
+          <div id="message-box" class="dis-none"></div>
+          <div class="remember-line">
+            <div class="check-box">
+              <input type="checkbox" name="check-remember" id="form-check-remember">
+              <label for="check-remember">Remember me</label>
+            </div>
+            <a href="forgot_password.html">Forgot my password</a>
+          </div>  
+          <div class="btn-line" >
+            <button type="submit" id="log-in">Log in</button>
+            <a id="guest-log-in" href="./board.html">Guest Log in</a>
+          </div>
+      </form>
+      </div>
+  </body>
+</html>

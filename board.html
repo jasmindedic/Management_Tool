@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Css links -->
+    <link rel="stylesheet" href="template.css/board.css">
+    <link rel="stylesheet" href="template.css/add_task.css">
+    <link rel="icon" type="image/png" href="accessories/img/ficon.png"/>
+    <!-- JavaScript links -->
+    <script src="template.js/script.js"></script>
+    <script src="template.js/board.js"></script>
+    <script src="template.js/board_html.js"></script>
+    <script src="template.js/task.js"></script>
+    <script src="template.js/mini_backend.js"></script>
+    <script src="https://kit.fontawesome.com/b7a5700e28.js" crossorigin="anonymous"></script>
+    <title>Board</title>
+</head>
+<body onload="includeHTML(),init(), loadAllTasks()">
+    <div w3-include-html="side.html"></div>
+    <div class="content" id="content">
+        <div id="secondcontent">
+            <div class="main-head">
+                <h1>Board</h1>
+                <div class="outer-box">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass glass"></i>
+                        <input type="text" class="findTask" aria-placeholder="Find Task" id="search"
+                            onchange="search()">
+                    </div>
+                    <div class="secondary" onclick="openPopup()">
+                        <div class="addTask">Add task</div>
+                        <img class="capa1" src="accessories/img/plus_only.png">
+                    </div>
+                </div>
+            </div>
+            <div class="boardV1 main-board" id="scroll">
+                <div class="column" id="frame144">
+                    <div class="column-head">
+                        <div class="toDo column-title">To do</div>
+                        <img class="buttonPlus" src="accessories/img/plus.png" onclick="openPopup()">
+                    </div>
+                    <div id="todoTable" class="column-content" ondrop="MoveTo('todoTable')"
+                        ondragover="allowDrop(event)">
+                    </div>
+                </div>
+                <div class="column" id="frame145">
+                    <div class="column-head">
+                        <div class="inProgress column-title">In progress</div>
+                        <img class="buttonPlus" src="accessories/img/plus.png" onclick="openPopup()">
+                    </div>
+                    <div id="progressTable" class="column-content" ondrop="MoveTo('progressTable')"
+                        ondragover="allowDrop(event)">
+                    </div>
+                </div>
+                <div class="column" id="frame146">
+                    <div class="column-head">
+                        <div class="awaiting column-title">Awaiting Feedback</div>
+                        <img class="buttonPlus" src="accessories/img/plus.png" onclick="openPopup()">
+                    </div>
+                    <div id="feedbackTable" class="column-content" ondrop="MoveTo('feedbackTable')"
+                        ondragover="allowDrop(event)">
+                    </div>
+                </div>
+                <div class="column" id="frame133">
+                    <div class="column-head">
+                        <div class="doneText column-title">Done</div>
+                        <img class="buttonPlus" src="accessories/img/plus.png" onclick="openPopup()">
+                    </div>
+                    <div id="doneTable" class="column-content" ondrop="MoveTo('doneTable')"
+                        ondragover="allowDrop(event)">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-container" id="board-popup">
+            <h1>Add Task</h1>
+            <form id="task-form" onsubmit="createTaskfinish(); return false">
+                <div class="form-content">
+                    <div class="form-box" id="box-left">
+                        <p class="labels">Title</p>
+                        <input type="text" name="title" id="form-title" placeholder="Enter a title" required>
+                        <p class="labels">Description</p>
+                        <textarea name="descr" id="form-descr" cols="30" rows="10" placeholder="Enter a Description"
+                            required></textarea>
+                        <p class="labels">Category</p>
+                        <div class="category-line">
+                            <select name="category" id="form-category" required onchange="checkCategory()">
+                                <option class="grey" value="new-cat" id="new-cat">New category</option>
+                                <option class="orange" value="office" selected>Design</option>
+                                <option class="blue" value="office">Backoffice</option>
+                                <option class="lime" value="sales">Sales</option>
+                            </select>
+                            <div class="input-category-line d-none">
+                                <input type="text" name="input-category" id="input-category" placeholder="New Category">
+                                <span id="close-category" onclick="closeCategory()"><i class="fa-solid fa-xmark"></i></span>
+                                <span id="confirm-category" onclick="confirmCategory()"><i class="fa-solid fa-check"></i></span>
+                            </div>
+                        </div>
+                        <div class="color-bar d-none">
+                            <span class="color color-azure" onclick="pickColor(0)"><span class="toggles active"></span></span>
+                            <span class="color color-red" onclick="pickColor(1)"><span class="toggles"></span></span>
+                            <span class="color color-lime" onclick="pickColor(2)"><span class="toggles"></span></span>
+                            <span class="color color-orange" onclick="pickColor(3)"><span class="toggles"></span></span>
+                            <span class="color color-magenta" onclick="pickColor(4)"><span class="toggles"></span></span>
+                            <span class="color color-blue" onclick="pickColor(5)"><span class="toggles"></span></span>
+                        </div>
+                        <p class="labels">Assigned to</p>
+                        <div id="select-box" onclick="showCheckboxes()">
+                            <select id="form-assign">
+                                <option>Select an option</option>
+                            </select>
+                            <div class="input-contact-line d-none">
+                                <input type="text" name="input-contact" id="input-contact" placeholder="Invite Contact">
+                                <span id="close-invitation" onclick="closeInvitation()"><i class="fa-solid fa-xmark"></i></span>
+                                <span id="confirm-invitation" onclick="confirmInvitation()"><i class="fa-solid fa-check"></i></span>
+                              </div>
+                            <div class="overSelect"></div>
+                            <div id="checkboxes">
+                            </div>
+                        </div>
+                        <div id="use-contact"></div>
+                        <div id="invited-contact"></div>
+                    </div>
+                    <div class="form-box" id="box-right">
+                        <p class="labels">Due date</p>
+                        <input type="date" name="date" id="input-date">
+                        <p class="labels">Prio</p>
+                        <div class="prio-line">
+                            <button type="button" id="btn-1" class="prios" onclick="activate(1, 'urgent')">Urgent <span
+                                    id="icon-prio-1"><i class="fa-solid fa-chevron-up"></i></span></button>
+                            <button type="button" id="btn-2" class="prios" onclick="activate(2, 'medium')">Medium <span
+                                    id="icon-prio-2"><i class="fa-solid fa-equals  active-icon"></i></span></button>
+                            <button type="button" id="btn-3" class="prios" onclick="activate(3, 'low')">Low <span
+                                    id="icon-prio-3"><i class="fa-solid fa-chevron-down"></i></span></button>
+                        </div>
+                        <p class="labels">Subtasks</p>
+                        <div class="subtask-line">
+                            <button type="button" id="add-subtask"><i class="fa-solid fa-plus"
+                                    onclick="addSubtask()"></i></button>
+                            <input type="text" name="subtask" id="form-subtask" placeholder="Add new subtask">
+                        </div>
+                        <ul id="subtask-list">
+                        </ul>
+                    </div>
+                    <span id="hrz-line"></span>
+                </div>
+                <div class="btn-line" id="btn-line">
+                    <button id="clear-btn" onclick="closeAddTaskPopup()"><span class="icon_label">Cancel</span><span
+                            class="icon"><i class="fa-solid fa-xmark"></i></span></button>
+                    <button id="create-btn" type="submit"><span class="icon_label, icon_label2">Create Task </span><span
+                            class="icon"><i class="fa-solid fa-check"></i></span></button>
+                </div>
+            </form>
+        </div>
+        <div class="board-popup-note" id="openNote">
+        </div>
+    </div>
+</body>
+</html>
