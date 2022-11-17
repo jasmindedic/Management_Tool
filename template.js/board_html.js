@@ -32,7 +32,7 @@ function contactToUseHTML(j) {
  */
 function createNote(task, i) {
     return `
-    <div class="frame71" draggable="true" id="${i}" ondragstart="startDragging(${i})">
+    <div class="frame71 glow-on-hover" draggable="true" id="${i}" ondragstart="startDragging(${i})">
                         <div class="frame119" onclick = "openNote(${i})">
                             <div class="frame1132" style="${updateColor(task['category'])}" id="color">
                                 <div class="desing" id="desing"> ${task['category']} </div>
