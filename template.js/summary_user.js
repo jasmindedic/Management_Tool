@@ -1,13 +1,12 @@
 async function init() {
     await downloadFromServer();
     allTasks = JSON.parse(backend.getItem('allTasks')) || [];
-    /*   loggedUser = JSON.parse(backend.getItem('logged-user')) || []; */
     checkBoard();
     dayTime();
 }
 
 /**
- * morning greet depending on the time of day
+ * Greeting depending on the time of day
  */
 function dayTime() {
     let objDate = new Date();

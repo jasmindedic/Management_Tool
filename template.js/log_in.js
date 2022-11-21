@@ -83,8 +83,8 @@ function errorMessage(input) {
 
 /**
  * Check if existing user. If no, execute errorMessage. If yes, check password.
- * @param {string} email - user's email-input
- * @param {string} password - user's password-input
+ * @param {string} email 
+ * @param {string} password 
  * @returns 
  */
 function findUser(email, password) {
@@ -102,7 +102,7 @@ function findUser(email, password) {
 
 /**
  * Check if user want to remember login-data
- * @returns boolean
+ * @returns 
  */
 function checkRemember() {
   return document.getElementById('form-check-remember').checked;

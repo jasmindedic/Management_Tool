@@ -7,7 +7,7 @@ async function init() {
 }
 
 /**
- * Loading Server atas
+ * Loading Server datas
  */
 function jsonParse() {
     allTasks = JSON.parse(backend.getItem('allTasks')) || [];
@@ -16,7 +16,7 @@ function jsonParse() {
 
 
 /**
- * Pinning notes on board at right progress-column
+ * Pinning notes on board 
  */
 function updateHTML() {
     clearTable();

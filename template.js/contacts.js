@@ -167,7 +167,6 @@ function clearEntries() {
 }
 
 
-//* Kontakte bekommen zufällige container Farbe *//
 function makeRandomColor() {
   randomColor = [];
   let color = Math.floor(Math.random() * 16777215).toString(16);
@@ -184,7 +183,6 @@ function randomInitials(name) {
 }
 
 
-//* Funktionen für alphabetische Reienfolge *//
 function render() {
   renderName();
   for (let i = 0; i < allContacts.length; i++) {
@@ -245,8 +243,6 @@ function deleteContact(i) {
   render();
 }
 
-
-//* Nachricht über gespeicherte Notizt schliessen *//
 function closeMessage() {
   document.getElementById('message-box').classList.add('d-none');
 }
