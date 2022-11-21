@@ -10,6 +10,7 @@
   <link rel="icon" type="image/png" href="accessories/img/ficon.png" />
   <!-- JavaScript link -->
   <script src="./template.js/mini_backend.js"></script>
+  <script src="./summary_users.js"></script>
 </head>
 <body>
   <!-- header-menu -->
@@ -18,8 +19,9 @@
     <h2 class="kanban-heading">Kanban Project Management Tool</h2>
     <div class="help_profile">
       <a href="help.html"><img class="help_icon" src="accessories/img/help_logo.svg" /></a>
-      <a href="./Log_In.html"><img class="profile" id="toggle" 
-          src="./accessories/img/profile_guest.png" /></a>
+      <img onclick="showProfilePopup()" class="profile" id="toggle" src="./accessories/img/profile_guest.png" />
+      <!-- pop up for profile logo -->
+      <a id="profile-popup" class="d-none" href="./Log_In.html">Log out</a>
     </div>
     <nav id="toggle-menu" class="d-none">
       <a href="help.html" id="nav-help">Help</a>

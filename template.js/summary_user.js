@@ -79,3 +79,16 @@ function showDoneNotesCounter() {
     doneNumber = done.length;
     document.getElementById('done').innerHTML = `${doneNumber}`;
 }
+
+
+/* Profile popup */
+function showProfilePopup() {
+    let profilePopup = document.getElementById("profile-popup");
+
+    if (profilePopup.classList.contains("d-none")) {
+        profilePopup.classList.remove("d-none");
+        console.log("works!!")
+    } else {
+        profilePopup.classList.add("d-none");
+    }
+}

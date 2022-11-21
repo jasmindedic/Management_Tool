@@ -146,8 +146,26 @@ nav a {
     background-color: #091931;
 }
 
+.help_profile {
+    position: relative;
+}
 
-/************* MEDIA **************/
+#profile-popup {
+    position: absolute;
+    right: 0;
+    bottom: -3.4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background-color: #2A3647;
+    color: #fff;
+}
+
+
 
 @media (max-width: 900px) {
     .kanban-heading {
