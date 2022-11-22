@@ -76,7 +76,7 @@ function noteHTML(task, i) {
                 <div class="desing" id="desing"> ${task['category']} 
                 </div>
             </div>
-            <div onclick="closeShow()" class="close">x </div>
+            <div onclick="closeShow()" class="close zoomedCloseBtn">✖️</div>
         </div>
         <div class="note-title" id="title"><b>${task['title']}</b></div>
         <div class="note-description" id="text">${task['description']}</div>
