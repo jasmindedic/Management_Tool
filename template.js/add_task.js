@@ -1,7 +1,7 @@
 async function init() {
   await downloadFromServer();
   jsonParse();
-  /* fillAssigns(); */
+  fillAssigns();
 }
 
 

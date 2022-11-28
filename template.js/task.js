@@ -17,8 +17,8 @@ let colors = ['azure', 'red', 'lime', 'orange', 'magenta', 'blue'];
  */
 function fillAssigns() {
   let box = document.getElementById('checkboxes');
-  box.innerHTML = 
-  `<div class="assign-contact" id="invite-contact" onclick="invite()">
+  box.innerHTML =
+    `<div class="assign-contact" id="invite-contact" onclick="invite()">
     <span>Invite Contact</span>
     <i class="fa-solid fa-address-book"></i>
   </div>`;
@@ -77,7 +77,7 @@ function contactToUse(i) {
   let checkBox = document.getElementById(`contact-check-${i}`);
   if (checkBox.checked == true)
     selectAssign(i, contact);
-  if (checkBox.checked == false){
+  if (checkBox.checked == false) {
     deselectAssign(i, contact);
   }
   document.getElementById("checkboxes").style.display = "block";
